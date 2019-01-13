@@ -32,8 +32,6 @@ extern void (* const g_pfnVectors[])(void);
 extern uVectorEntry __vector_table;
 #endif
 
-int counter = 0;
-int state = 0;
 
 //*****************************************************************************
 //                 GLOBAL VARIABLES -- End
@@ -113,6 +111,10 @@ BoardInit(void)
 int
 main()
 {
+    //Initialize variables
+    int counter = 0;
+    int state = 0;
+
     //Initialize Board configurations
     BoardInit();
 
