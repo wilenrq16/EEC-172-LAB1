@@ -14,41 +14,35 @@ void LEDBinaryCount(int counter)
 {
     if(counter == 0) {
         //000
-        GPIOPinWrite(GPIOA1_BASE, 0x2, 0x0);
-        GPIOPinWrite(GPIOA1_BASE, 0x4, 0x0);
-        GPIOPinWrite(GPIOA1_BASE, 0x8, 0x0);
+        GPIOPinWrite(GPIOA1_BASE, 0xE, 0x0);
     }
     if(counter == 250000) {
         //001
-        GPIOPinWrite(GPIOA1_BASE, 0x2, 0x2);
+        GPIOPinWrite(GPIOA1_BASE, 0xE, 0x2);
     }
     if(counter == 500000) {
         //010
-        GPIOPinWrite(GPIOA1_BASE, 0x2, 0x0);
-        GPIOPinWrite(GPIOA1_BASE, 0x4, 0x4);
+        GPIOPinWrite(GPIOA1_BASE, 0xE, 0x4);
     }
     if(counter == 750000) {
         //011
-        GPIOPinWrite(GPIOA1_BASE, 0x2, 0x2);
+        GPIOPinWrite(GPIOA1_BASE, 0xE, 0x6);
     }
     if(counter == 1000000) {
         //100
-        GPIOPinWrite(GPIOA1_BASE, 0x8, 0x8);
-        GPIOPinWrite(GPIOA1_BASE, 0x2, 0x0);
-        GPIOPinWrite(GPIOA1_BASE, 0x4, 0x0);
+        GPIOPinWrite(GPIOA1_BASE, 0xE, 0x8);
     }
     if(counter == 1250000) {
         //101
-        GPIOPinWrite(GPIOA1_BASE, 0x2, 0x2);
+        GPIOPinWrite(GPIOA1_BASE, 0xE, 0xA);
     }
     if(counter == 1500000){
         //110
-        GPIOPinWrite(GPIOA1_BASE, 0x2, 0x0);
-        GPIOPinWrite(GPIOA1_BASE, 0x4, 0x4);
+        GPIOPinWrite(GPIOA1_BASE, 0xE, 0xC);
     }
     if(counter == 1750000) {
         //111
-        GPIOPinWrite(GPIOA1_BASE, 0x2, 0x2);
+        GPIOPinWrite(GPIOA1_BASE, 0xE, 0xE);
     }
 
 }
@@ -57,15 +51,11 @@ void LEDBinaryCount(int counter)
 void LEDUnisonBlink(int counter){
     if(counter == 0) {
         //on
-        GPIOPinWrite(GPIOA1_BASE, 0x2, 0x2);
-        GPIOPinWrite(GPIOA1_BASE, 0x4, 0x4);
-        GPIOPinWrite(GPIOA1_BASE, 0x8, 0x8);
+        GPIOPinWrite(GPIOA1_BASE, 0xE, 0xE);
     }
     if(counter == 250000) {
         //off
-        GPIOPinWrite(GPIOA1_BASE, 0x2, 0x0);
-        GPIOPinWrite(GPIOA1_BASE, 0x4, 0x0);
-        GPIOPinWrite(GPIOA1_BASE, 0x8, 0x0);
+        GPIOPinWrite(GPIOA1_BASE, 0xE, 0x0);
     }
 }
 

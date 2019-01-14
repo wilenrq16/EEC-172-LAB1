@@ -148,7 +148,7 @@ main()
             state = 1;
         }
         //if sw2 pressed and sw3 not and in state 0, set state to 2
-        if(0x40==GPIOPinRead(GPIOA2_BASE, 0x40) && 0x20!=GPIOPinRead(GPIOA1_BASE, 0x20) && state == 0) {
+        else if(0x40==GPIOPinRead(GPIOA2_BASE, 0x40) && 0x20!=GPIOPinRead(GPIOA1_BASE, 0x20) && state == 0) {
             state = 2;
         }
     }
@@ -162,7 +162,7 @@ main()
             counter = 0;
         }
         //if sw3 pressed and sw2 not and in state 2, set state to 1, set pin 18 high, and reset counter
-        if(0x40==GPIOPinRead(GPIOA2_BASE, 0x40) && 0x20!=GPIOPinRead(GPIOA1_BASE, 0x20) && state == 2) {
+        else if(0x40==GPIOPinRead(GPIOA2_BASE, 0x40) && 0x20!=GPIOPinRead(GPIOA1_BASE, 0x20) && state == 2) {
             Report("SW2 pressed\n\r");
             state = 1;
             GPIOPinWrite(GPIOA3_BASE, 0x10, 0x10);
@@ -180,7 +180,7 @@ main()
             }
         }
         //logic for incrementing/resetting counter variable and passing to LEDUnisonBlink function
-        if(state == 1) {
+        else if(state == 1) {
             LEDUnisonBlink(counter);
             if(counter == 500000) {
                 counter = 0;
